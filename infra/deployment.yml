@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aardvark-deployment
+  labels:
+    name: aardvark
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: aardvark
+  template:
+    metadata:
+      labels:
+        name: aardvark
+    spec:
+      containers:
+        - name: aardvark
+          image: nearlyunique/aardvark
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
