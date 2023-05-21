@@ -8,11 +8,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      name: aardvark
+      app: aardvark
   template:
     metadata:
       labels:
-        name: aardvark
+        app: aardvark
     spec:
       containers:
         - name: aardvark
@@ -20,3 +20,4 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
+              name: aardvark-port
